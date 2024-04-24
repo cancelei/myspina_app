@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'spina', '~> 2.18'
-gem 'spina-blog'
+gem 'spina-blog', git: 'https://github.com/SpinaCMS/spina-blog', branch: 'master'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
