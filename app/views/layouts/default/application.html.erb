@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= current_spina_account.name %></title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'default/shared/navigation' %>
+    
+    <%= yield %>
+    <h1>This is from the layouts/default/application.html.erb - backend</h1>
+  </body>
+</html>
