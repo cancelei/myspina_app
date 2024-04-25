@@ -10,6 +10,15 @@ GIT
       nokogiri (~> 1.10, >= 1.10.0)
       spina (>= 2.1.0)
 
+GIT
+  remote: https://github.com/denkGroot/spina-comments
+  revision: 0483125742e40b2dc756cf8b63cc3a0106c735e5
+  branch: master
+  specs:
+    spina-comments (0.1.0)
+      rails (>= 5.2)
+      spina (>= 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -344,6 +353,7 @@ DEPENDENCIES
   selenium-webdriver
   spina (~> 2.18)
   spina-blog!
+  spina-comments!
   sprockets-rails
   stimulus-rails
   tailwindcss-rails
