@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_24_202847) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_25_220118) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_202847) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["slug"], name: "index_spina_blog_categories_on_slug"
+  end
+
+  create_table "spina_blog_comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["post_id"], name: "index_spina_blog_comments_on_post_id"
+    t.index ["user_id"], name: "index_spina_blog_comments_on_user_id"
   end
 
   create_table "spina_blog_posts", id: :serial, force: :cascade do |t|
@@ -317,8 +327,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_24_202847) do
     t.datetime "password_reset_sent_at", precision: nil
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "spina_blog_comments", "spina_blog_posts", column: "post_id"
   add_foreign_key "spina_blog_posts", "spina_images", column: "image_id"
   add_foreign_key "spina_blog_posts", "spina_users", column: "user_id"
 end

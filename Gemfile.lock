@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/SpinaCMS/spina-blog
-  revision: 1cf085bb5788b125301a84178d6870af1b6a443f
-  branch: master
+  remote: https://github.com/aseroff/spina-blog
+  revision: c5208f0a96e02dfdfc2df74bd89bdb5731343550
+  branch: comment_feature
   specs:
     spina-blog (0.3.0)
       draper (>= 3.0.0, <= 5.0)
@@ -112,6 +112,12 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -195,6 +201,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.4-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -243,6 +250,9 @@ GEM
       io-console (~> 0.5)
     request_store (1.6.0)
       rack (>= 1.4)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
     ruby-vips (2.2.1)
       ffi (~> 1.12)
@@ -306,6 +316,8 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -335,6 +347,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  devise
   importmap-rails
   jbuilder
   pg (~> 1.1)
