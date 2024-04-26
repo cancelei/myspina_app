@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= @page.title %></title>
+</head>
+<body>
+  <h1><%= raw @page.content('title') %></h1>
+  <h2><%= @page.content('subtitle') %></h2>
+
+  <p><%= @page.content('location') %></p>
+  <div>
+    <a href="<%= @page.content('event_link') %>">Event Details</a>
+  </div>
+  <div>
+    <%= raw @page.content('text') if @page.content('text').present? %>
+  </div>
+  <p>Starts: <%= Date.parse(@page.content('start_date')).strftime('%B %d, %Y') rescue 'Invalid date' %></p>
+  <p>Ends: <%= Date.parse(@page.content('end_date')).strftime('%B %d, %Y') rescue 'Invalid date' %></p>
+  <footer>
+    <%= raw @page.content('footer') %>
+  </footer>
+</body>
+</html>

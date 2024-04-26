@@ -21,9 +21,17 @@ Spina::Theme.register do |theme|
   # - Option
   # - Repeater
   theme.parts = [
-    {name: "text", title: "Body", hint: "Your main content", part_type: "Spina::Parts::Text"},
+    {name: "text", title: "Long Text", hint: "Your main content", part_type: "Spina::Parts::Text"},
     {name: "image", title: "Image", part_type: "Spina::Parts::Image"},
-    {name: "header_image", title: "Header Image", part_type: "Spina::Parts::Image"}
+    {name: "header_image", title: "Header Image", part_type: "Spina::Parts::Image"},
+    # Add new parts for the sport event page
+    {name: "title", title: "Title", part_type: "Spina::Parts::Text"},
+    {name: "subtitle", title: "Subtitle", part_type: "Spina::Parts::Text"},
+    {name: "location", title: "Location", part_type: "Spina::Parts::Line"},
+    {name: "event_link", title: "Event Link", part_type: "Spina::Parts::Line"},
+    {name: "start_date", title: "Start Date", part_type: "Spina::Parts::Line"},
+    {name: "end_date", title: "End Date", part_type: "Spina::Parts::Line"},
+    {name: "footer", title: "Footer", part_type: "Spina::Parts::Text"}
   ]
 
   # View templates
@@ -32,7 +40,8 @@ Spina::Theme.register do |theme|
   # by referencing them from the theme.parts configuration above.
   theme.view_templates = [
     {name: "homepage", title: "Homepage", parts: %w[text]},
-    {name: "show", title: "Page", parts: %w[text]}
+    {name: "show", title: "Page", parts: %w[text]},
+    {name: "sport_event", title: "Sport Event Page", parts: %w[title subtitle text location event_link start_date end_date text footer]}
   ]
 
   # Custom pages
