@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= current_spina_account.name %></title>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <%= render 'default/shared/navigation' %>
-    
-    <%= yield %>
-    <h1>This is from the layouts/default/application.html.erb - backend</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= current_spina_account.name %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %> <!-- Assuming you have application.css -->
+  <%= javascript_include_tag 'application' %> <!-- Assuming you have application.js -->
+</head>
+<body>
+  <%= render 'default/shared/navigation' %>
+
+  <%= yield %> <!-- This is where individual page content gets inserted -->
+
+  <footer>
+    <p>This is from the layouts/default/application.html.erb - backend</p>
+  </footer>
+</body>
 </html>

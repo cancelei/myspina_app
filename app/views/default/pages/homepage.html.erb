@@ -1,3 +1,20 @@
 <h1><%= current_page.title %></h1>
-<%= content.html :text %>
-<h1>This is from the homepage.html.erb - backend</h1>
+
+<div class="mt-8">
+  <% Spina::Blog::Post.includes(comments: :user).order(published_at: :desc).limit(3).each do |post| %>
+    <div class="post-container">
+      <h2 class="post-title"><%= post.title %></h2>
+      <p class="post-body"><%= truncate(post.content, length: 250) %></p>
+      <div>
+        <h3>Comments</h3>
+        <% post.comments.last(3).each do |comment| %>
+          <div class="comment">
+            <!-- Ensure that you check for a user and replace 'name' with the correct user attribute for the name -->
+            <p class="comment-author"><%= comment.user&.name || 'Anonymous' %>:</p>
+            <p><%= truncate(comment.content, length: 100) %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
