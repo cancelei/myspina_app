@@ -1,7 +1,0 @@
-/* This file should not contain any styles as we are using Tailwind CSS directly in ERB files. */
-    }
-    .navbar a {
-        display: block;
-        text-align: center;
-    }
-}
