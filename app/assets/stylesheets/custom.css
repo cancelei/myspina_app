@@ -1,45 +1,4 @@
-/* Global Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #F5F5F5;
-}
-
-/* Navigation Bar Styles */
-.navbar {
-    background-color: #4CAF50;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-.navbar a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-.navbar a:hover {
-    background-color: #66BB6A;
-}
-
-/* Button Styles */
-.button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.button:hover {
-    background-color: #388E3C;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+/* This file should not contain any styles as we are using Tailwind CSS directly in ERB files. */
     }
     .navbar a {
         display: block;
